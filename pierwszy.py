@@ -153,7 +153,24 @@ print(starszy % name)  # Mam na imię 90
 print("Wynik:", liczba)  # Wynik: 3.900001,  sep=' ', end='\n'
 print("Wynik:", liczba, sep="....")  # Wynik:....3.900001 - zmieniony separator
 
-print(100 / 3) # 33.333333333333336
-print(100 // 3) # 33 - częśc całkowita z dzielenia
-print(100 % 3) # modulo, reszta  z dzielenia, r=1
-print(10 % 3) # 1 reszty 3 * 3 + 1 = 10
+print(100 / 3)  # 33.333333333333336
+print(100 // 3)  # 33 - częśc całkowita z dzielenia
+print(100 % 3)  # modulo, reszta  z dzielenia, r=1
+print(10 % 3)  # 1 reszty 3 * 3 + 1 = 10
+
+zysk = 678098765432123
+print(f"Nasza duza liczba: {zysk}")  # Nasza duza liczba: 678098765432123
+print(f"Nasza duza liczba: {zysk:,}")  # Nasza duza liczba: 678,098,765,432,123
+print(f"Nasza duza liczba: {zysk:_}")  # Nasza duza liczba: 678,098,765,432,123
+# __old, __new - nazwy parametrów, nie przpisujemy
+print(f"Nasza duza liczba: {zysk:_}".replace("_", " "))  # Nasza duza liczba: 678 098 765 432 123
+
+parametr = 10_000_000_000
+print(parametr)  # 10000000000
+print(type(parametr))  # <class 'int'>
+
+encoded_text = tekst.encode("utf-8")
+print(encoded_text)  # b'Witaj \xc5\x9awiecie'
+#  \xc5\x9a - wartośc bajtów dla literki Ś w szesnastkowym
+print(type(encoded_text))  # <class 'bytes'>, bajtowy
+print(encoded_text.decode("utf-8"))  # Witaj Świecie
