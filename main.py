@@ -16,3 +16,6 @@ if __name__ == '__main__':
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 # 2 z shift - lupka pycharma
 # wheel, theme
+# ma tabulator
+# (.venv) PS C:\Users\CSComarch\PycharmProjects\PythonProject> python .\main.py
+# Hi, PyChar
