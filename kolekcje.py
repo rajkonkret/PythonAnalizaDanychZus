@@ -169,3 +169,16 @@ print(matrix)  # [[3, 4, 5], [6, 7], [8, 9, 0]]
 print(matrix[0][0])  # 3
 matrix = [[3, 4, 5], [6, 7, [8, 9, 0]]]
 print(matrix[1][2][2])  # 0
+
+# imie  = input("Jak masz na imię? ")
+# print("Twoje imię to:", imie)
+# # Jak masz na imię? radek
+# # Twoje imię to: radek
+
+# input zwraca str
+a = int(input("Podaj liczbę a"))
+b = input("Podaj liczbę b")
+print(f"Suma liczb {a} + {b} = {a + float(b)}")
+# Podaj liczbę a5
+# Podaj liczbę b4
+# Suma liczb 5 + 4 = 9.0
