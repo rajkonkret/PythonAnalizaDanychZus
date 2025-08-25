@@ -121,3 +121,51 @@ oceny["Tomek"] = lista_oceny
 print(oceny)
 # {'Tomek': [3, 4, 5, 6, 5, 5], 'Radek': 5, 'Agata': 6, 'Zenek': 3}
 print(oceny["Tomek"][1])  # 4
+
+dictionary = {}
+dict_pusty = dict()
+print(dictionary)
+print(dict_pusty)
+# {}
+# {}
+print(type(dict_pusty))
+print(type(dictionary))
+# <class 'dict'>
+# <class 'dict'>
+
+# zbiór - set()
+# przechowuje unikalne wartości
+# nie zachowuje kolejnosci przy dodawania elemntów
+# nie posiada indeksu
+lista = [45, 55, 66, 77, 45, 55]
+zbior1 = set(lista)
+print(zbior1)  # {66, 77, 45, 55}
+
+zbior1.add(100)
+zbior1.add(102)
+zbior1.add(105)
+zbior1.add(77)
+zbior1.add(55)
+print(zbior1)  # {66, 100, 102, 105, 77, 45, 55}
+
+zbior2 = {45, 55, 166, 177}
+
+print(zbior1.difference(zbior2))  # {66, 100, 102, 105, 77}
+print(zbior2.difference(zbior1))  # {177, 166}
+
+print(zbior1.intersection(zbior2))  # {45, 55}
+
+pusty_zbior = set()
+print(pusty_zbior)
+print(type(pusty_zbior))
+# set()
+# <class 'set'>
+
+lista_ze_zbioru = list(zbior1)
+print(lista_ze_zbioru)  # [66, 100, 102, 105, 77, 45, 55]
+
+matrix = [[3, 4, 5], [6, 7], [8, 9, 0]]
+print(matrix)  # [[3, 4, 5], [6, 7], [8, 9, 0]]
+print(matrix[0][0])  # 3
+matrix = [[3, 4, 5], [6, 7, [8, 9, 0]]]
+print(matrix[1][2][2])  # 0
