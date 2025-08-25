@@ -63,3 +63,27 @@ print(type(age))  # <class 'int'>
 # pierwszy.py:51: error: Name "name" already defined on line 42  [no-redef]
 # Found 2 errors in 1 file (checked 1 source file)
 # (.venv) PS C:\Users\CSComarch\PycharmProjects\PythonProject>
+
+tekst = "Witaj Świecie"
+
+print(tekst)
+print(type(tekst))  # <class 'str'>
+
+# teksty sa niemutowalne
+tekst.upper()  # nie podstawia zmian pod zmienna tekst
+# """ Return a copy of the string converted to uppercase. """
+print(tekst)  # Witaj Świecie
+# text pool
+print(tekst.upper())  # WITAJ ŚWIECIE, drukuje tekst z nowego miejsca pamięci
+zmienna = tekst.upper()
+print("Zmienna:", zmienna)
+# Zmienna: WITAJ ŚWIECIE
+
+print(tekst.lower())  # witaj świecie
+print(tekst.capitalize())  # Witaj świecie
+
+zmienna1 = "GROSS"
+zmienna2 = "groß"
+
+print(zmienna1.lower() == zmienna2.lower())  # False
+print(zmienna1.casefold() == zmienna2.casefold())  # porównanie caseless, True
