@@ -105,7 +105,7 @@ print(type(oceny))  # <class 'dict'>
 print(oceny["Tomek"])  # 4
 # print(oceny["tomek"]) # KeyError: 'tomek'
 print(oceny.get("Tomek"))
-print(oceny.get("tomek")) # None
+print(oceny.get("tomek"))  # None
 
 print(oceny.keys())
 print(oceny.values())
@@ -113,3 +113,11 @@ print(oceny.items())
 # dict_keys(['Tomek', 'Radek', 'Agata', 'Zenek'])
 # dict_values([4, 5, 5, 3])
 # dict_items([('Tomek', 4), ('Radek', 5), ('Agata', 5), ('Zenek', 3)])
+
+oceny['Agata'] = 6
+print(oceny)  # {'Tomek': 4, 'Radek': 5, 'Agata': 6, 'Zenek': 3}
+lista_oceny = [3, 4, 5, 6, 5, 5]
+oceny["Tomek"] = lista_oceny
+print(oceny)
+# {'Tomek': [3, 4, 5, 6, 5, 5], 'Radek': 5, 'Agata': 6, 'Zenek': 3}
+print(oceny["Tomek"][1])  # 4
