@@ -85,5 +85,28 @@ print(tekst.capitalize())  # Witaj świecie
 zmienna1 = "GROSS"
 zmienna2 = "groß"
 
+# == porównanie
 print(zmienna1.lower() == zmienna2.lower())  # False
 print(zmienna1.casefold() == zmienna2.casefold())  # porównanie caseless, True
+
+# != różne
+print(1 != 8)  # rózne, True
+# zmienne logiczne, boolean -> True, False
+
+# rzutowanie - zamiana typów
+print(int("39"))  # zamiana na int
+print(str(39))  # zamiana str
+
+print(int(True))  # 0
+print(int(False))  # 1
+
+print(bool(1))  # True
+print(bool(0))  # False
+
+print(bool(100))  # True
+print(bool("radek"))  # True
+
+print(bool(""))  # False
+
+# None - nie wiem, stan nieokreslony, odpowidnik null
+print(bool(None))  # False
