@@ -47,3 +47,69 @@ print(lista_pusta)  # ['Agnieszka', 'Piotr', 'Radek', 'Zenek']
 osoby = ['Tomek', 'Ewa', "Adam"]
 osoby.extend(lista_pusta)
 print(osoby)  # ['Tomek', 'Ewa', 'Adam', 'Agnieszka', 'Piotr', 'Radek', 'Zenek']
+
+a = 1
+b = 2
+a = b
+print(a)  # 2
+b = 3
+print(a)  # 2
+
+nowa_lista = lista_pusta  # kopia referencji (adres w pamięci)
+lista_copy = lista_pusta.copy()  # kopia listy
+print(lista_pusta)  # ['Agnieszka', 'Piotr', 'Radek', 'Zenek']
+print(nowa_lista)  # ['Agnieszka', 'Piotr', 'Radek', 'Zenek']
+lista_pusta.clear()  # usuniecie elementów z listy
+print(lista_pusta)
+print(nowa_lista)
+print(lista_copy)  # ['Agnieszka', 'Piotr', 'Radek', 'Zenek']
+
+print(id(lista_pusta))  # 2623352881024
+print(id(nowa_lista))  # 2623352881024
+print(id(lista_copy))  # 2623350143040
+
+# krotka (tupla) - niemutowalna lista
+# pozwala lepiej zarządać pamięcią
+krotka = (23, 34, 56, "Radek")
+print(krotka)  # (23, 34, 56, 'Radek')
+krotka1 = "radek", "tomek", "zenek"
+print(krotka1)  # ('radek', 'tomek', 'zenek')
+
+krotka2 = ("Radek",)
+print(type(krotka2))  # <class 'tuple'>
+
+krotka3 = "Radek",
+print(type(krotka3))  # <class 'tuple'>
+
+print(len(krotka))  # długosc krotki, 4 elemnty
+# rozpakowanie krotki
+# (23, 34, 56, 'Radek')
+a, b, *c = (23, 34, 56, 'Radek')  # * - pozostałe elementy
+print(a, b, c)  # 23 34 [56, 'Radek']
+a, *b, c = (23, 34, 56, 'Radek')
+print(a, b, c)  # 23 [34, 56] Radek
+
+# krotka[1] = 4  # TypeError: 'tuple' object does not support item assignment
+
+# słownik: dane typu klucz-wartosć
+# {"name":"John"}
+# odpowiednik jsona
+oceny = {"Tomek": 4,
+         "Radek": 5,
+         "Agata": 5,
+         "Zenek": 3,
+         }
+
+print(oceny)  # {'Tomek': 4, 'Radek': 5, 'Agata': 5, 'Zenek': 3}
+print(type(oceny))  # <class 'dict'>
+print(oceny["Tomek"])  # 4
+# print(oceny["tomek"]) # KeyError: 'tomek'
+print(oceny.get("Tomek"))
+print(oceny.get("tomek")) # None
+
+print(oceny.keys())
+print(oceny.values())
+print(oceny.items())
+# dict_keys(['Tomek', 'Radek', 'Agata', 'Zenek'])
+# dict_values([4, 5, 5, 3])
+# dict_items([('Tomek', 4), ('Radek', 5), ('Agata', 5), ('Zenek', 3)])
