@@ -1,6 +1,7 @@
 -----------------------
 rajkonkret660@gmail.com
 https://play.google.com/store/apps/details?id=pl.rajkonkret.testjava2&hl=pl&gl=US
+https://naukapythona.com.pl/?
 
 -----------------------
 ------------------------
@@ -118,9 +119,3 @@ spam /= 1    spam = spam / 1
 spam %= 1    spam = spam % 1
 
 https://www.kaggle.com/datasets
-
-https://colab.research.google.com/drive/1R3Q1Tq4yZPLNj2A9xGpLKK9yihtkQfpV#scrollTo=4ZMH29wR2Hm6
-
-https://colab.research.google.com/drive/1oqJoklQzRKKf_BX9PvzyvNSDuk7S6zWn
-
-https://colab.research.google.com/drive/1YAgfFgj7xc8HhJAG6u56_XoOB2bJj8qt
