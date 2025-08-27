@@ -1,38 +1,26 @@
-import pandas as pd
-import tempfile
 import time
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, avg
+import numpy as np
+import pandas as pd
+import polars as pl
 
-# Tworzenie danych (1 mln wierszy)
-num_rows = 100_000_000
-data = {
-    "name": [f"User{i}" for i in range(num_rows)],
-    "age": [i % 60 + 20 for i in range(num_rows)],
-    "salary": [3000 + (i % 5000) * 0.75 for i in range(num_rows)]
-}
-df = pd.DataFrame(data)
+# Dane testowe – 5 milionów wierszy
+N = 5_000_000
+a = np.random.randint(0, 100, size=N)
+b = np.random.rand(N)
 
-# Zapis do tymczasowego pliku CSV
-tmp_csv = tempfile.NamedTemporaryFile(delete=False, suffix=".csv")
-df.to_csv(tmp_csv.name, index=False)
+# --- Pandas ---
+df_pd = pd.DataFrame({"a": a, "b": b})
 
-print("CSV zapisany jako:", tmp_csv.name)
+start = time.perf_counter()
+mean_pd = df_pd[df_pd["a"] > 50]["b"].mean()
+time_pd = time.perf_counter() - start
 
-# Uruchomienie SparkSession
-spark = SparkSession.builder.appName("PySparkSalaryAvg").getOrCreate()
+# --- Polars ---
+df_pl = pl.DataFrame({"a": a, "b": b})
 
-# Wczytanie danych i obliczenie średniej pensji > 30 lat
-start_time = time.time()
-df_spark = spark.read.csv(tmp_csv.name, header=True, inferSchema=True)
-avg_salary = (
-    df_spark.filter(col("age") > 30)
-    .select(avg("salary"))
-    .collect()[0][0]
-)
-end_time = time.time()
+start = time.perf_counter()
+mean_pl = df_pl.filter(pl.col("a") > 50)["b"].mean()
+time_pl = time.perf_counter() - start
 
-print(f"Średnia pensja (>30 lat): {avg_salary:.2f}")
-print(f"Czas wykonania: {end_time - start_time:.4f} s")
-
-spark.stop()
+print(f"Pandas: {time_pd:.4f} s, wynik = {mean_pd}")
+print(f"Polars: {time_pl:.4f} s, wynik = {mean_pl}")
