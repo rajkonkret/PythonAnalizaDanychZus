@@ -24,3 +24,5 @@ time_pl = time.perf_counter() - start
 
 print(f"Pandas: {time_pd:.4f} s, wynik = {mean_pd}")
 print(f"Polars: {time_pl:.4f} s, wynik = {mean_pl}")
+# Pandas: 0.0640 s, wynik = 0.49998057057958456
+# Polars: 0.0140 s, wynik = 0.49998057057958456
